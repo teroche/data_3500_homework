@@ -9,7 +9,6 @@ print("You bought", number_purchased, "apples for", apple_price, "per apple. You
 # Activity 2
 # user input
 age = int(input("Enter your age: "))
-age=(int(input(47))
 live_to = int(input("What age would you like to live to: "))
 
 # calculate years left to live
