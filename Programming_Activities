@@ -16,3 +16,7 @@ if total_bill == 0:
 else:
  print(f"Number of apples purchased: {number_purchased}")
     print(f"Total bill (with tax): ${total_bill:.2f}")
+git status
+git add .
+git commit -m "Add Programming Activity 1"
+git push
