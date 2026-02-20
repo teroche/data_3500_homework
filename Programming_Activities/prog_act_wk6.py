@@ -20,4 +20,4 @@ def welcome_fctn(name, age, favorite_color):
     )
     return welcome_message
 
-print(welcome_fctn("Tara", 47, "Purplegit"))
+print(welcome_fctn("Tara", 47, "Purple))
