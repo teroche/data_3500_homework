@@ -1,9 +1,12 @@
 #Programming Activity 1
-is_palindrome = input("Please enter a 3 digit number")
+is_palindrome = input("Please enter a 5 digit number")
 num = int(is_palindrome)
-first_digit = num // 100
-third_digit = num % 10
-if first_digit == third_digit:
+first_digit = num // 10000
+second_digit == num // 1000
+third_digit = num % 100
+
+if first_digit == _digit:
+if second_digit == fourth_digit:
     print("Palindrome!")
 else:
     print("Not Palindrome!")
