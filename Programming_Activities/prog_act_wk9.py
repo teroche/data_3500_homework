@@ -9,13 +9,9 @@ with open("favorite_color.txt", "w") as file:
 print("Favorite color saved.")
 
 #Activity 2
-import numpy as np
+import numpy
 
-# initialize numpy array of 100 zeros
-np1 = np.zeros(100)
+np1 = numpy.zeros(100)
+np1 = numpy.random.rand(100)
 
-# change array to random numbers
-np1 = np.random.rand(100)
-
-print("Random numpy array:")
-print(np1)
+print("np1:", np1))
