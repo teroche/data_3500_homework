@@ -15,3 +15,5 @@ np1 = numpy.zeros(100)
 np1 = numpy.random.rand(100)
 
 print("np1:", np1))
+
+#used Google to find out how to make import work
