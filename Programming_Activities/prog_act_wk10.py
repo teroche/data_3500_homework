@@ -1,4 +1,3 @@
-
 # Programming Activity Week 10
 # Activity 1
 # create list of even numbers 2–100 using list comprehension
@@ -60,4 +59,7 @@ vowel_names = [name.upper() for name in names if name[0].lower() in "aeiou"]
 count = len(vowel_names)
 
 print(vowel_names)
+
+print(count)
+
 print(count)
