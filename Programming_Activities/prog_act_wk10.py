@@ -49,3 +49,14 @@ for word in words:
 new_sentence += "!"
 
 print(new_sentence)
+
+# Challenge: names starting with vowels
+
+names = ["Alice", "Bob", "Eve", "Oscar", "Uma", "Charlie"]
+
+vowel_names = [name.upper() for name in names if name[0].lower() in "aeiou"]
+
+count = len(vowel_names)
+
+print(vowel_names)
+print(count)
