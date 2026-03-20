@@ -249,4 +249,4 @@
 399.27
 392.78
 380.30
-file = open("hw4/TSLA.txt")
+file = open("TSLA.txt")
