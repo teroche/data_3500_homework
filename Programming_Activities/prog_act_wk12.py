@@ -52,7 +52,8 @@ with open("person.json", "w") as file:
     json.dump(person, file, indent=4)
 
 # Verify the updated contents
-with open("person.json", "r") as file:
+#ChatGPT helped me fix an error here
+with open("Programming_Activities/person.json", "r") as file:
     updated_person = json.load(file)
 
 print("Verified updated age in file:", updated_person["age"])
