@@ -1,4 +1,5 @@
 import json
+
 # FUNCTION: Mean Reversion Strategy
 def meanReversionStrategy(prices):
     position = None
@@ -29,19 +30,21 @@ def meanReversionStrategy(prices):
                 position = None
 
     percent_return = 0
-    if first_buy:
+    if first_buy is not None:
         percent_return = round((total_profit / first_buy) * 100, 2)
 
     print("-----------------------")
     print(f"Total profit:    {total_profit:.2f}")
-    print(f"First buy:       {first_buy:.2f}" if first_buy else "First buy:       None")
+    if first_buy is not None:
+        print(f"First buy:       {first_buy:.2f}")
+    else:
+        print("First buy:       None")
     print(f"Percent return:  {percent_return:.2f}%")
 
     return round(total_profit, 2), percent_return
 
 
 # FUNCTION: Simple Moving Average Strategy
-
 def simpleMovingAverageStrategy(prices):
     position = None
     buy_price = 0
@@ -71,31 +74,29 @@ def simpleMovingAverageStrategy(prices):
                 position = None
 
     percent_return = 0
-    if first_buy:
+    if first_buy is not None:
         percent_return = round((total_profit / first_buy) * 100, 2)
 
     print("-----------------------")
     print(f"Total profit:    {total_profit:.2f}")
-    print(f"First buy:       {first_buy:.2f}" if first_buy else "First buy:       None")
+    if first_buy is not None:
+        print(f"First buy:       {first_buy:.2f}")
+    else:
+        print("First buy:       None")
     print(f"Percent return:  {percent_return:.2f}%")
 
     return round(total_profit, 2), percent_return
 
 
-
 # FUNCTION: Save Results
-
 def saveResults(results):
-    with open("Programming_Activities/hw5/results.json", "w") as file:
+    with open("/workspaces/data_3500_homework/Programming_Activities/hw5/results.json", "w") as file:
         json.dump(results, file, indent=4)
 
 
-
 # MAIN PROGRAM
-
-
 tickers = [
-    "AAPL", "CLH", "ADBE",
+    "AAPL", "GOOG", "ADBE",
     "TSLA", "GFL", "POGHF",
     "RSG", "WCN", "WM", "WMS"
 ]
@@ -104,33 +105,27 @@ results = {}
 
 for ticker in tickers:
     print("\n==============================")
-    print(ticker.lower(), "Simple Moving Average Strategy Output:")
+    print(f"{ticker.lower()} Simple Moving Average Strategy Output:")
 
-    # load file (matches your folder + lowercase filenames)
-    with open(f"Programming_Activities/hw5/{ticker.lower()}.txt") as file:
+    with open(f"/workspaces/data_3500_homework/Programming_Activities/hw5/{ticker.lower()}.txt", "r") as file:
         lines = file.readlines()
 
-    # handle BOTH formats (price-only OR date+price)
-    prices = [
-        round(float(line.strip().split()[-1]), 2)
-        for line in lines
-        if line.strip()
-    ]
+    prices = [round(float(line.strip().split()[-1]), 2) for line in lines if line.strip()]
+
+    print("Loaded prices:", len(prices))
+    print("First 5 prices:", prices[:5])
 
     results[f"{ticker}_prices"] = prices
 
-    # SMA strategy
     sma_profit, sma_returns = simpleMovingAverageStrategy(prices)
     results[f"{ticker}_sma_profit"] = sma_profit
     results[f"{ticker}_sma_returns"] = sma_returns
 
     print(f"\n{ticker.lower()} Mean Reversion Strategy Output:")
 
-    # Mean Reversion strategy
     mr_profit, mr_returns = meanReversionStrategy(prices)
     results[f"{ticker}_mr_profit"] = mr_profit
     results[f"{ticker}_mr_returns"] = mr_returns
 
-
-# save results (OUTSIDE loop)
 saveResults(results)
+print("\nresults.json saved.")
