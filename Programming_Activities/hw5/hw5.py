@@ -1,5 +1,4 @@
 import json
--
 # FUNCTION: Mean Reversion Strategy
 def meanReversionStrategy(prices):
     position = None
