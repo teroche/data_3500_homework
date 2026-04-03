@@ -1,4 +1,5 @@
 import json
+
 # Programming Activity 1
 
 # Ask the user for two numbers
@@ -39,7 +40,7 @@ for key in person_info.keys():
 
 # Programming Activity 3
 # Load person.json into a dictionary
-with open("person.json", "r") as file:
+with open("Programming_Activities/person.json", "r") as file:
     person = json.load(file)
 
 # Show the age before and after updating
@@ -48,11 +49,10 @@ person["age"] += 1
 print("Age in person.json after update:", person["age"])
 
 # Save the updated dictionary back to person.json
-with open("person.json", "w") as file:
+with open("Programming_Activities/person.json", "w") as file:
     json.dump(person, file, indent=4)
 
 # Verify the updated contents
-#ChatGPT helped me fix an error here
 with open("Programming_Activities/person.json", "r") as file:
     updated_person = json.load(file)
 
