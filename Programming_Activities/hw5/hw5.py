@@ -98,25 +98,26 @@ for ticker in tickers:
     print("\n==============================")
     print(ticker, "Simple Moving Average Strategy Output:")
 
-    # load prices
-    file = open(f"hw5/{ticker}.txt")
+# load prices
+with open(f"hw5/{ticker}.txt") as file:
     lines = file.readlines()
-    prices = [round(float(line.strip()), 2) for line in lines]
+
+prices = [round(float(line.strip()), 2) for line in lines]
 
     # store prices
-    results[f"{ticker}_prices"] = prices
+results[f"{ticker}_prices"] = prices
 
     # SMA strategy
-    sma_profit, sma_returns = simpleMovingAverageStrategy(prices)
-    results[f"{ticker}_sma_profit"] = sma_profit
-    results[f"{ticker}_sma_returns"] = sma_returns
+sma_profit, sma_returns = simpleMovingAverageStrategy(prices)
+results[f"{ticker}_sma_profit"] = sma_profit
+results[f"{ticker}_sma_returns"] = sma_returns
 
-    print("\n" + ticker, "Mean Reversion Strategy Output:")
+print("\n" + ticker, "Mean Reversion Strategy Output:")
 
     # Mean Reversion strategy
-    mr_profit, mr_returns = meanReversionStrategy(prices)
-    results[f"{ticker}_mr_profit"] = mr_profit
-    results[f"{ticker}_mr_returns"] = mr_returns
+mr_profit, mr_returns = meanReversionStrategy(prices)
+results[f"{ticker}_mr_profit"] = mr_profit
+results[f"{ticker}_mr_returns"] = mr_returns
 
 
 # save results
