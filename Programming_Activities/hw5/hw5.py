@@ -89,7 +89,7 @@ def saveResults(results):
 tickers = [
     "AAPL", "GOOG", "ADBE",
     "TSLA", "GFL", "POGHF",
-    "RSG", "WCN", "WM", "WMS"
+    "RSG", "WCN", "WM", "wms"
 ]
 
 results = {}
@@ -99,7 +99,7 @@ for ticker in tickers:
     print(ticker, "Simple Moving Average Strategy Output:")
 
 # load prices
-with open(f"hw5/{ticker}.txt") as file:
+with open(f"Programming_Activities/hw5/{ticker}.txt") as file:
     lines = file.readlines()
 
 prices = [round(float(line.strip()), 2) for line in lines]
