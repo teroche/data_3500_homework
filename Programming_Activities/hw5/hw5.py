@@ -89,7 +89,7 @@ def saveResults(results):
 tickers = [
     "AAPL", "GOOG", "ADBE",
     "TSLA", "GFL", "POGHF",
-    "RSG", "WCN", "WM", "wms"
+    "RSG", "WCN", "WM", "WMS"
 ]
 
 results = {}
