@@ -1,0 +1,44 @@
+{
+    "run_date": "2026-04-25 23:41:09",
+    "total_alerts": 500,
+    "animal_related_alerts": 31,
+    "percent_animal_related": 6.2,
+    "animal_counts": {
+        "bat": 14,
+        "bear": 3,
+        "snake": 4,
+        "deer": 1,
+        "wildlife": 6,
+        "coyote": 1,
+        "elk": 1,
+        "moose": 1
+    },
+    "animal_alerts_by_type": {
+        "Park Closure": 9,
+        "Information": 16,
+        "Danger": 1,
+        "Caution": 5
+    },
+    "top_parks": [
+        [
+            "Golden Gate National Recreation Area",
+            3
+        ],
+        [
+            "Congaree National Park",
+            2
+        ],
+        [
+            "Fort Bowie National Historic Site",
+            2
+        ],
+        [
+            "El Malpais National Monument",
+            1
+        ],
+        [
+            "Big South Fork National River & Recreation Area",
+            1
+        ]
+    ]
+}
