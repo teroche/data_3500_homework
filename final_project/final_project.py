@@ -30,14 +30,14 @@ animal_keywords = {
 }
 
 
-# create parks.csv if it does not exist
+# create parks.csv
 if not os.path.exists(PARKS_FILE):
     with open(PARKS_FILE, "w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
         writer.writerow(["date_collected", "park_code", "park_name", "state"])
 
 
-# create alerts.csv if it does not exist
+# create alerts.csv
 if not os.path.exists(ALERTS_FILE):
     with open(ALERTS_FILE, "w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
@@ -75,7 +75,7 @@ for park in parks:
         park_lookup[park_code] = park_name
 
 
-# read existing park codes so we do not duplicate parks
+# read existing park codes
 existing_park_codes = set()
 
 with open(PARKS_FILE, "r", encoding="utf-8") as file:
@@ -110,7 +110,7 @@ alert_data = alert_request.json()
 alerts = alert_data["data"]
 
 
-# read existing alert IDs so we do not duplicate alerts
+# read existing alert IDs
 existing_alert_ids = set()
 
 with open(ALERTS_FILE, "r", encoding="utf-8") as file:
